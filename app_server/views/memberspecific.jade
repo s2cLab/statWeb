@@ -1,0 +1,142 @@
+extends layout
+
+block content
+  .row.page-header
+    .col-lg-1
+    .col-lg-10
+      h1 Professor 
+  .row
+    .col-lg-1.col-md-1.col-sm-0
+    .col-lg-10.col-md-10.col-sm-12
+      .row
+        .col-xs-12
+          .panel.panel-primary
+            .panel-heading
+              .panel-title Header
+            .panel-body
+              img.img-responsive-img-rounded(src='/images/yeom.jpg',height='200px',width='auto') 
+        
+          h1.facultyName Yeom Sang Woo, B.A.
+          ul.titles
+            li
+              | Student
+          h3 Departmental Affiliations
+          ul
+            li
+              a(href='http://stat.chonbuk.ac.kr/') Chonbuk National University : Statistics
+              span.affiliation (Primary)
+          h3 Contact Information
+          p.facultyAddress
+            | Div. of Statistics
+            br
+            |  664-14 1 ga Duckjin-Dong Duckjin-Gu Jeonju Chonbuk
+            br
+            |  561-756, Korea
+            br
+            br
+            span.email
+              a(href='mailto:duatkddn@naver.com') duatkddn@naver.com
+          p.facultyWebsites
+            a(href='https://210.117.171.198:3000', target='_blank') Ystory
+
+          ul.nav.nav-tabs
+            li.active
+                a.tab-exp(href='#tab-1')
+                  | Experience &
+                  br
+                  | Accomplishments
+            li
+              a(href='#tab-4') Projects
+                br
+                br
+          #tab-1.tab
+            div
+              h3 Education
+              p
+                | Bachelor's degree, 2016
+                br
+                | 							Chonbuk National University : Statistics
+                br
+            div
+              h3 Overview
+              .tinymceblock
+                p
+                  | See Ystory
+                  a(href='https://210.117.171.198:3000') Ystory
+                span.tinymceblockend
+          #tab-2.tab
+          #tab-3.tab
+            .facultySelectPublications
+              ul
+          #tab-4.tab
+            .facultySelectProjects
+              ul
+                li
+                  a(href='#', title='Bayesian Analysis of Single Subject fMRI Data', target='_blank') Not yet...
+                  
+          .panel.panel-info
+            .panel-heading
+              h2.panel-title 아구몬 스킬
+            .panel-body
+              p 꼬마불꽃
+              p 태일아~
+
+          .panel.panel-primary
+            .panel-heading
+              h2.panel-title 진화과정
+            .panel-body
+              span.label.label-warning
+                span.glyphicon.glyphicon-ok
+                | &nbsp; 유년기 : 코로몬
+              | &nbsp;
+              span.label.label-warning
+                  span.glyphicon.glyphicon-ok
+                  | &nbsp; 성숙기 : 그레이몬
+                | &nbsp;    
+              span.label.label-warning
+                  span.glyphicon.glyphicon-ok
+                  | &nbsp; 완전체 : 메탈 그레이몬
+                | &nbsp;  &nbsp;
+              span.label.label-warning
+                  span.glyphicon.glyphicon-ok
+                  | &nbsp; 궁극기 : 워그레이몬
+                | &nbsp;  
+          .panel.panel-primary
+            .panel-heading
+              h2.panel-title 아구몬 사진
+            .panel-body
+              img.img-responsive-img-rounded(src='/images/yeom.jpg',height='200px',width='auto') 
+      .row
+        .col-xs-12
+          .panel.panel-primary-review-panel
+            .panel-heading
+              a.btn.btn-default.pull-right(href='/location/review/new') 리뷰 추가
+              h2.panel-title 아구몬 평가
+            .panel-body.review-container
+              .row
+                .review
+                  .well.well-sm.review-header
+                    span.rating
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star                      
+                    span.reviewAuthor 염상우
+                    small.reviewTimestamp 2016년 7월 1일
+                  .col-xs-12
+                    p 아구몬은 우리의 추억속에 아름답게 기억될 것입니다.
+                .review
+                  .well.well-sm.review-header
+                    span.rating
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star-empty
+                      span.glyphicon.glyphicon-star-empty
+                    span.reviewAuthor 배아영
+                    small.reviewTimestamp 2016년 7월 1일
+                  .col-xs-12
+                    p 낄낄
+    .col-xs-12.col-md-2
+      p 아구몬에 대한 설명

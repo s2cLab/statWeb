@@ -1,0 +1,57 @@
+extends layout
+
+block content
+  .col-lg-2
+  .col-lg-8
+    .row
+      h1= pageHeader1.title
+      span #{pageHeader1.strapline}
+    each prof in professor
+      .row
+        .col-sm-12
+          .panel.panel-primary.panel-body
+            .col-sm-3
+              img.memberImg.img-rounded.center-block(src=prof.picture_image)
+            .col-sm-9
+              h4=prof.name
+              p.glyphicon.glyphicon-user  Position : 
+                span= prof.position
+              br
+              p.glyphicon.glyphicon-signal  Affiliation : 
+                a(href='http://stat.chonbuk.ac.kr/')= prof.faculty_address
+              br
+              p.glyphicon.glyphicon-phone-alt  Phone Number : 
+                span=prof.phone_num
+              br
+              p.glyphicon.glyphicon-paperclip  e-mail address : 
+                a(href='mailto:duatkddn@naver.com')= prof.email_address
+              br
+              p.glyphicon.glyphicon-home  Own Address : 
+                a(href=prof.site_address, target='_blank')= prof.site_name
+    .row
+      h1= pageHeader2.title
+      span #{pageHeader2.strapline}
+    each st in student
+      .row
+        .col-sm-12
+          .panel.panel-success.panel-body
+            .col-sm-3
+              img.memberImg.img-rounded.center-block(src=st.picture_image)
+            .col-sm-9
+              h4=st.name
+              p.glyphicon.glyphicon-user  Position : 
+                span= st.position
+              br
+              p.glyphicon.glyphicon-signal  Affiliation : 
+                a(href='http://stat.chonbuk.ac.kr/')= st.faculty_address
+              br
+              p.glyphicon.glyphicon-phone-alt  Phone Number : 
+                span=st.phone_num
+              br
+              p.glyphicon.glyphicon-paperclip  e-mail address : 
+                a(href='mailto:duatkddn@naver.com')= st.email_address
+              br
+              p.glyphicon.glyphicon-home  Own Address : 
+                a(href=st.site_address, target='_blank')= st.site_name
+  .row
+  .col-lg-2
