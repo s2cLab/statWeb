@@ -1,89 +1,96 @@
-/* GET home page. */
-module.exports.member = function(req, res){
+var  request = require('request');
+var apiOptions = {
+  server : "http://localhost:3000"
+};
+
+var renderMember = function(req, res, responseBody) {
+  var message;
+  if( !(responseBody instanceof Array) ) {
+    message = "API lookup error";
+    responseBody = [];
+  } else {
+    if (!responseBody.length) {
+      message = "member가 없습니다.";
+    }
+  }   
     res.render('member-list', {
-      title: 'MemberList',
-      pageHeader1:{
-        title : 'Professor',
-        strapline : 'A Great Faculty'
+      title: 'Members',
+      pageHeader:{
+        title : 'S2C Lab Member',
+        strapline : '전북대학교 통계학과'
       },
-      pageHeader2:{
-        title : 'Alumni',
-        strapline : '우주최강 Good Student'
-      },
-      sidebar: 'sidebar',
-      professor:[{
-        name : '한경수',
-        diploma : '',
-        position : '교수',
-        living_address : '전라북도 전주시 송천동',
-        faculty_address : '전북대학교 통계학과',
-        email_address : 'kshan@jbnu.ac.kr',
-        phone_num : 'none',
-        picture_image: "/images/member/hanks.gif",
-        site_address : 'http://blog.naver.com/kshan226',
-        site_name : '境界를 넘어서',
-        hlink : 'member/hanks'
-      },{
-        name : '안정용',
-        diploma : '',
-        position : '교수',
-        living_address : '전라북도 전주시 서곡',
-        faculty_address : '전북대학교 통계학과',
-        email_address : 'kshan@jbnu.ac.kr',
-        phone_num : 'none',
-        picture_image: "/images/member/jyahn.jpg",
-        site_address : 'http://blog.naver.com/ahn9739',
-        site_name : '지재천리',
-        hlink : 'member/ahn'
-      }, {
-        name : '문길성',
-        diploma : '',
-        position : '교수',
-        living_address : '전라북도 전주시 서곡',
-        faculty_address : '전북대학교 통계학과',
-        email_address : 'kshan@jbnu.ac.kr',
-        phone_num : 'none',
-        picture_image: "/images/member/moon.jpg",
-        site_address : 'http://barlack.blog.me/60012132996',
-        site_name : "Don't want everything!",
-        hlink : 'member/moon'
-      }],
-      student:[{
-        name : '김은지',
-        diploma : 'Master',
-        position : '대학원생',
-        living_address : '광주광역시 남구',
-        faculty_address : '전북대학교 통계학과',
-        email_address : 'eunjeekej43@naver.com',
-        picture_image: "/images/member/eunji.jpg",
-        phone_num : 'none',
-        site_address : '',
-        site_name : '',
-        hlink : 'member/eun'
-      },{
-        name : '염상우',
-        diploma : 'Bachelor',
-        position : '학부생',
-        living_address : '전라북도 전주시 효자동',
-        faculty_address : '전북대학교 통계학과',
-        email_address : 'duatkddn@naver.com',
-        phone_num : '010-2892-5135',
-        picture_image: "/images/member/yeom.jpg",
-        site_address : 'https://210.117.171.198:3000',
-        site_name : 'Ystory',
-        hlink : 'member/yeom'
-      },{
-        name : '이종원',
-        diploma : 'Bachelor',
-        position : '학부생',
-        living_address : '전라북도 익산시 함열읍',
-        faculty_address : '전북대학교 통계학과',
-        email_address : 'niceguy1575@naver.com',
-        picture_image: "/images/member/jong.jpg",
-        phone_num : '010-9274-1575',
-        site_address : 'https://210.117.171.195:3000',
-        site_name : '',
-        hlink : 'member/jong'
-      }]
+      members: responseBody,
+      message: message
+		});
+};
+
+var _showError = function (req, res, status, body) {
+  var title, content;
+  if (status === 404) {
+    title = "404, page not found";
+    content = "Oh dear. Looks like we can't find this page. Sorry.";
+  } else if (status === 500) {
+    title = "500, internal server error";
+    content = "How embarrassing. There's a problem with our server.";
+  } else {
+    title = status + ", something's gone wrong";
+    content = "Something, somewhere, has gone just a little bit wrong.";
+  }
+  res.status(status);
+  res.render('generic-text', {
+    title : title,
+    content : content
   });
 };
+
+module.exports.memberList = function(req, res){
+  var requestOptions, path;
+  path = '/api/members';
+  requestOptions = {
+    url : apiOptions.server + path,
+    method : "GET",
+    json : {},
+    qs : {}
+  };
+  request (
+    requestOptions,
+    function(err, response, body) {
+      renderMember(req, res, body);
+    }
+  );
+};
+
+/* POST 'insert Img' part */
+module.exports.insertImg = function(req, res){
+  var requestOptions, path, memberId, postdata;
+  memberId = req.params.memberId;
+  path = "/api/members/" + memberId;
+  postdata = {
+    data: req.body.pic,
+    contentType: 'image/jpeg'
+  };
+  requestOptions = {
+    url : apiOptions.server + path,
+    method : "POST",
+    json : postdata
+  };
+  console.log(postdata);
+  if (!postdata.data) {
+    res.send("there is no submitted picture");
+  } else {
+    request(
+      requestOptions,
+      function(err, response, body) {
+        if (response.statusCode === 201) {
+          console.log("status code " + response.statusCode);
+        } else if (response.statusCode === 400) {
+          console.log("status code " + response.statusCode);
+        } else {
+          res.send("image update success");
+        }
+      }
+    );
+  }
+};
+
+

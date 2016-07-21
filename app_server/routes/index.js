@@ -9,7 +9,9 @@ router.get('/', ctrlHome.home);
 /* about */
 router.get('/aboutS2C', ctrlAbout.aboutS2C);
 router.get('/contactUS', ctrlAbout.contactUS);
+
 /* member */
-router.get('/member', ctrlMember.member);
+router.get('/members', ctrlMember.memberList);
+router.post('/members/:memberId', ctrlMember.insertImg);
 
 module.exports = router;

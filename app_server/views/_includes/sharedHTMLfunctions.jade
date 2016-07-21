@@ -1,0 +1,9 @@
+mixin convertImg(contents)
+  -var img = new Buffer(contents).toString();
+    img.memberImg.img-rounded.center-block(src=contents)
+
+mixin outputRating(rating)
+- for (var i = 1; i <= rating; i++)
+  span.glyphicon.glyphicon-star
+- for (i = rating; i < 5; i++)
+  span.glyphicon.glyphicon-star-empty

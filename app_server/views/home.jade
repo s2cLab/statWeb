@@ -9,10 +9,10 @@ block content
       li(data-target='#myCarousel', data-slide-to='2')
     .carousel-inner(role='listbox')
       .item.active
-        img.first-slide(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='First slide')
+        img.first-slide(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==')
         .container
           .carousel-caption
-            h1 Example headline.
+            h1 S2C Lab이 현재 개발중입니다.
             p
               | Note: If you're viewing this page via a 
               code file://
@@ -20,7 +20,7 @@ block content
             p
               a.btn.btn-lg.btn-primary(href='#', role='button') Sign up today
       .item
-        img.second-slide(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Second slide')
+        img.second-slide(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==')
         .container
           .carousel-caption
             h1 Another example headline.
@@ -29,7 +29,7 @@ block content
             p
               a.btn.btn-lg.btn-primary(href='#', role='button') Learn more
       .item
-        img.third-slide(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Third slide')
+        img.third-slide(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==')
         .container
           .carousel-caption
             h1 One more for good measure.
@@ -46,7 +46,7 @@ block content
   .container.marketing
     // Three columns of text below the carousel
     .row
-      .col-lg-4
+      .col-lg-2
         img.img-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', width='140', height='140')
         h2 Heading
         p
@@ -54,21 +54,34 @@ block content
         p
           a.btn.btn-default(href='#', role='button') View details »
       // /.col-lg-4
-      .col-lg-4
-        img.img-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', width='140', height='140')
-        h2 Heading
-        p
-          | Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
-        p
-          a.btn.btn-default(href='#', role='button') View details »
-      // /.col-lg-4
-      .col-lg-4
-        img.img-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', width='140', height='140')
-        h2 Heading
-        p
-          | Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-        p
-          a.btn.btn-default(href='#', role='button') View details »
-      // /.col-lg-4
+      .col-lg-5
+        h2
+          | 게시판1
+          a.glyphicon.glyphicon-plus.pull-right(href='/')
+        hr(style='height:2px;border:none;color:#333;background-color:#333;')
+        .list-group
+          a.list-group-item.active(href='#')
+            | contents1
+          a.list-group-item(href='#') contents2
+          a.list-group-item(href='#') contents3
+          a.list-group-item(href='#') contents4
+          a.list-group-item(href='#') contents5
+          a.list-group-item(href='#') contents6
+          a.list-group-item(href='#') contents7
+      .col-lg-5
+        h2
+          | 게시판2
+          a.glyphicon.glyphicon-plus.pull-right(href='/')
+        hr(style='height:2px;border:none;color:#333;background-color:#333;')
+        .list-group
+          a.list-group-item.active(href='#')
+            | contents1
+          a.list-group-item(href='#') contents2
+          a.list-group-item(href='#') contents3
+          a.list-group-item(href='#') contents4
+          a.list-group-item(href='#') contents5
+          a.list-group-item(href='#') contents6
+          a.list-group-item(href='#') contents7
+        // /.col-lg-6
     // /.row
     // START THE FEATURETTES
