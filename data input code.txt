@@ -1,0 +1,74 @@
+use s2cLab
+
+db.members.save({
+		name: '한경수',
+		position: '교수',
+		address : '전라북도 전주시 송천동',
+		affiliation: '전북대학교 통계학과',
+		PhoneNumber: '',
+		webMail : 'kshan@jbnu.ac.kr',
+    homepageSite : 'http://blog.naver.com/kshan226',
+    homepageName : '境界를 넘어서',
+    memberImgPath : '/images/member/hanks.gif'
+	}
+)
+db.members.save({
+			name: '안정용',
+			position: '교수',
+			address : '전라북도 전주시 서곡',
+			affiliation: '전북대학교 통계학과',
+			PhoneNumber: '',
+			webMail : 'kshan@jbnu.ac.kr',
+      homepageSite : 'http://blog.naver.com/ahn9739',
+      homepageName : '지재천리',
+      memberImgPath : '/images/member/jyahn.jpg'
+	}
+)
+db.members.save({
+			name: '문길성',
+			position: '교수',
+			address : '전라북도 전주시 송천동',
+			affiliation: '전북대학교 통계학과',
+			PhoneNumber: '',
+			webMail : 'rightway@jbnu.ac.kr',
+      homepageSite : 'http://blog.naver.com/60012132996',
+      homepageName : 'Dont want everything!',
+      memberImgPath : '/images/member/moon.jpg'
+	}
+)
+db.members.save({
+			name: '김은지',
+			position: '학생',
+			address : '전라남도 광주시',
+			affiliation: '전북대학교 통계학과',
+			PhoneNumber: '',
+			webMail : 'eunjeekej43@jbnu.ac.kr',
+      homepageSite : '',
+      homepageName : '',
+      memberImgPath : '/images/member/eunji.jpg'
+	}
+)
+db.members.save({
+			name: '염상우',
+			position: '학생',
+			address : '전라북도 전주시',
+			affiliation: '전북대학교 통계학과',
+			PhoneNumber: '',
+			webMail : 'duatkddn@naver.com',
+      homepageSite : '',
+      homepageName : '',
+      memberImgPath : '/images/member/yeom.jpg'
+	}
+)
+db.members.save({
+			name: '이종원',
+			position: '학생',
+			address : '전라북도 익산시',
+			affiliation: '전북대학교 통계학과',
+			PhoneNumber: '',
+			webMail : 'niceguy1575@naver.com',
+      homepageSite : '',
+      homepageName : '',
+      memberImgPath : '/images/member/jong.jpg'
+	}
+)

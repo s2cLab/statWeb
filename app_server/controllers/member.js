@@ -13,6 +13,7 @@ var renderMember = function(req, res, responseBody) {
       message = "member가 없습니다.";
     }
   }   
+  console.log()
     res.render('member-list', {
       title: 'Members',
       pageHeader:{
@@ -55,7 +56,11 @@ module.exports.memberList = function(req, res){
   request (
     requestOptions,
     function(err, response, body) {
-      renderMember(req, res, body);
+      if (response.statusCode === 200) {
+        renderMember(req, res, body);
+      } else {
+        _showError(req, res, response.statusCode);
+      }
     }
   );
 };

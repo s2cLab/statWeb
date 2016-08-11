@@ -4,25 +4,34 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+
+require('./app_api/models/db');
+
+// routing 불러오기
 var routes = require('./app_server/routes/index');
-var users = require('./app_server/routes/users');
+var routesApi = require('./app_api/routes/index');
 
 var app = express();
+
+// require mongoose
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
 app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// URL이 시작될때 사용한다.
 app.use('/', routes);
-app.use('/users', users);
+app.use('/api', routesApi);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

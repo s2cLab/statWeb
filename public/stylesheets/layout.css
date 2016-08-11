@@ -104,10 +104,9 @@ small {
   text-align: right;
 }
 
-/* 내브빠~ */
 .navbar {
   position: relative;
-  min-height: 50px;
+  min-height: 55px;
   margin-bottom: 0px;
   border: 1px solid transparent;
 }
@@ -117,6 +116,13 @@ small {
   max-width: 100%;
   width: 120px;
   height: 150px;
+}
+
+.logoImg {
+  display: block;
+  max-width: 100%;
+  width: 200px;
+  height: 40px;
 }
 
 .aboutS2C {
