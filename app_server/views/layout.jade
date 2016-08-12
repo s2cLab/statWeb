@@ -1,5 +1,5 @@
 doctype html
-html(ng-app='s2cLab')
+html(ng-app='s2cLabApp')
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
@@ -9,7 +9,7 @@ html(ng-app='s2cLab')
     link(rel='stylesheet', href='/stylesheets/layout.css')
   body
     // Fixed navbar
-    nav.navbar.navbar-default.navbar-fixed-top
+    .nav.navbar.navbar-default.navbar-fixed-top
       .container
         .navbar-header
           button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
@@ -35,7 +35,10 @@ html(ng-app='s2cLab')
           form.navbar-form.navbar-right
             input.form-control(type='text', placeholder='Search...')
         // /.nav-collapse
-    block content
+    .container
+      div(ng-view)
+        block content
+        
     footer.footer
       .col-lg-2
       .col-lg-8
@@ -43,9 +46,10 @@ html(ng-app='s2cLab')
           | Div. of Statistics at Chonbuk National University <br>
           | 664-14 1 ga Duckjin-Dong Duckjin-Gu Jeonju Chonbuk, 561-756, Korea <br>
           | Tel: (Lab)+82-63-270-3389
-          
+            
     script(src='/angular/angular.min.js')
-    script(src='/angular/loc8rApp.js')
+    script(src='/lib/angular-route.min.js')
+    script(src='/app.js')
     script(src='/javascripts/jquery-1.12.4.min.js')
     script(src='/bootstrap/js/bootstrap.min.js')
     script(src='/javascripts/holder.js')

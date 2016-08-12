@@ -1,5 +1,3 @@
-include _includes/sharedHTMLfunctions
-
 extends layout
 
 block content
@@ -8,36 +6,31 @@ block content
     .row
       h1= pageHeader.title
       span #{pageHeader.strapline}
-    .error= message
-    each member in members
-      .row
-        .col-sm-12
-          .panel.panel-primary.panel-body
-            .col-sm-2
-                img.memberImg.img-rounded.center-block(src=member.memberImgPath)
-            .col-sm-10
-              h3= member.name
-              hr(style='height:1px;border:none;color:#333;background-color:#333;')
-              .col-sm-6
-                p.glyphicon.glyphicon-user  Position : 
-                  span= member.position
-                br
-                p.glyphicon.glyphicon-signal  Address : 
-                  span= member.address	
-                br
-                p.glyphicon.glyphicon-signal  Affiliation : 
-                  a(href='http://stat.chonbuk.ac.kr/')= member.affiliation
-              .col-sm-6
-                p.glyphicon.glyphicon-phone-alt  Phone Number : 
-                  span=member.PhoneNumber
-                br
-                p.glyphicon.glyphicon-paperclip  e-mail address : 
-                  a(href='mailto:duatkddn@naver.com')= member.webMail
-                br
-                p.glyphicon.glyphicon-home  Homepage : 
-                  a(href=member.homepageSite, target='_blank')= member.homepageName
-  .row
+    .row
+      .col-xs-12(ng-controller="memberListCtrl")
+        .error {{ message }}
+        .panel.panel-primary.panel-body(ng-repeat="member in data.memberList")
+          .col-sm-2
+            img.memberImg.img-rounded.center-block(src= "{{member.memberImgPath}}" )
+          .col-sm-10
+            h3{{member.name}}
+            hr(style='height:1px;border:none;color:#333;background-color:#333;')
+            .col-sm-6
+              p.glyphicon.glyphicon-user  Position : 
+                span {{member.position}}
+              br
+              p.glyphicon.glyphicon-home  Address : 
+                span {{member.address}}
+              br
+              p.glyphicon.glyphicon-signal  Affiliation : 
+                a(href='http://stat.chonbuk.ac.kr/') {{member.affiliation}}
+            .col-sm-6
+              p.glyphicon.glyphicon-phone-alt  Phone Number : 
+                span {{member.PhoneNumber}}
+              br
+              p.glyphicon.glyphicon-paperclip  e-mail address : 
+                a(href="{{member.webMail}}")
+              br
+              p.glyphicon.glyphicon-home  Homepage : 
+                a(href="{{member.homepageSite}}", target='_blank') {{member.homepageName}}
   .col-lg-2
-          h2
-          | 게시판1
-          a.glyphicon.glyphicon-plus.pull-right(href='/')

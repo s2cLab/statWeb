@@ -8,4 +8,5 @@ statWeb Frame ver
 - delete img page
 
 2016.08.12
+- add angular
 - to spa with anuglar
