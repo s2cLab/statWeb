@@ -131,10 +131,27 @@ small {
   max-height: 150px;
 }
 
-.nmh3 {
+.jbnuLogo{
+  max-width: 100%;
+  width : auto;
+}
+
+.schoolImg {
+  display: block;
+  max-width: 100%;
+  width: 380px;
+  height: 260px;
+}
+
+.nmh {
   margin-top: 0px;
   margin-bottom: 0px;
 }
+
+.spotlight {
+  color: 	#00BFFF;
+}
+
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */

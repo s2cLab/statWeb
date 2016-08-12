@@ -1,48 +1,31 @@
 extends layout
 
 block content
+  img.jbnuLogo.img-responsive(src='/images/school/jbnuLogo.jpg')
   .col-lg-2
   .col-lg-8
     .row
-      h1= pageHeader1.title
-      span #{pageHeader1.strapline}
-      br
-      br
+      h2= pageHeader.title
+      hr(style='height:2px;border:none;color:#333;background-color:#333;')
       .container
         .row
-          .col-sm-8
+          .col-lg-4
+            img.img-responsive.img-rounded.schoolImg(src=picture_image)
+          .col-lg-8
             .panel.panel-primary
-              .panel-heading
-                h3.nmh3 What is S2C?
-              .panel-body
-                img.img-responsive.img-rounded.center-block(src=picture_image)
-                span #{description.describe1}
-                br
-                span #{description.describe2}
-                br
-                span #{description.describe3}
-          .col-sm-4
-            .alert.alert-success(role='alert')
-              h3.nmh3 Facts & Figures
-            ul
-              hr
-              h4.glyphicon.glyphicon-user  Students :
-                span.clay 2,243
-              hr
-              h4.glyphicon.glyphicon-user  Master's Programs :
-                span.olive 8
-              hr
-              h4.glyphicon.glyphicon-user  Doctoral programs :
-                span.lake 3
-              hr
-              h4.glyphicon.glyphicon-user  Combined Programs :
-                span.beet 9
-              hr
-              h4.glyphicon.glyphicon-user  Departments :
-                span.basin 10
-              hr
-              h4.glyphicon.glyphicon-user  Centers & Institutes :
-                span.java 60
+                .panel-body
+                  h3.nmh= labNameKor
+                  h4.spotlight= labNameEng
+                  .container
+                    h4 지도교수 : 
+                      span.spotlight=headerName
+                      span 교수
+                    h4 연구분야 : 
+                      span.spotlight=field
+                      span 분야
+                    h4 연구실 관련 정보 
+                      a.h5(href=homePage)= enook
+
   .row
   .col-lg-2
   
