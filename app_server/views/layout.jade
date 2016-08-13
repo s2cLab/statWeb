@@ -35,9 +35,8 @@ html(ng-app='s2cLabApp')
           form.navbar-form.navbar-right
             input.form-control(type='text', placeholder='Search...')
         // /.nav-collapse
-    .container
-      div(ng-view)
-        block content
+    div(ng-view)
+      block content
         
     footer.footer
       .col-lg-2
@@ -50,6 +49,9 @@ html(ng-app='s2cLabApp')
     script(src='/angular/angular.min.js')
     script(src='/lib/angular-route.min.js')
     script(src='/app.js')
+    script(src='/home/homeCtrl.js')
+    script(src='/common/services/s2cData.service.js')
+    script(src='/memberList/memberListCtrl.js')
     script(src='/javascripts/jquery-1.12.4.min.js')
     script(src='/bootstrap/js/bootstrap.min.js')
     script(src='/javascripts/holder.js')

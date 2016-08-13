@@ -1,0 +1,32 @@
+<navigation></navigation>
+
+<img src="/images/school/jbnuLogo.jpg" class="jbnuLogo img-responsive">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <div class="row">
+        <h2> {{ vm.pageHeader.title }}</h2>
+        <hr style="height:2px;border:none;color:#333;background-color:#333;">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4"><img class="img-responsive img-rounded schoolImg" src="{{vm.picture_image}}"> </div>
+            <div class="col-lg-8">
+              <div class="panel panel-primary">
+                <div class="panel-body">
+                  <h3 class="nmh"> {{ vm.labNameKor }}</h3>
+                  <h4 class="spotlight"> {{ vm.labNameEng }}</h4>
+                  <div class="container">
+                    <h4>지도교수 : <span class="spotlight"></span> {{ vm.headerName }} <span>교수</span></h4>
+                    <h4>연구분야 : <span class="spotlight"></span> {{ vm.field }} <span>분야</span></h4>
+                    <h4>연구실 관련 정보 <a class="h5" href= {{vm.homePage}} > 교육콘텐츠 : enook </a> </h4>
+                    <div class = "col-md-8 col-sm-12">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+<footer-generic></footer-generic>

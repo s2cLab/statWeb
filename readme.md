@@ -10,3 +10,8 @@ statWeb Frame ver
 2016.08.12
 - add angular
 - to spa with anuglar
+
+2016.08.13
+- all of the page is made of SPA
+- angular routing
+- uglifying with IIFE
