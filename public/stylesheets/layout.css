@@ -101,7 +101,7 @@ code {
 small {
   font-weight: bold;
   display : block;
-  text-align: right;
+  text-align: left;
 }
 
 .navbar {

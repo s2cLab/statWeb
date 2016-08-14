@@ -15,3 +15,7 @@ statWeb Frame ver
 - all of the page is made of SPA
 - angular routing
 - uglifying with IIFE
+- remove #
+
+2016. 08. 14
+- routing title
