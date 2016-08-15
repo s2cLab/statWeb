@@ -1,3 +1,4 @@
+require('dotenv').load();
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -6,7 +7,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var uglifyJs = require("uglify-js");
 var fs = require('fs');
+var passport = require('passport');
+
 require('./app_api/models/db');
+require('./app_api/config/passport');
 
 // routing 불러오기
 var routes = require('./app_server/routes/index');
@@ -25,11 +29,15 @@ var appClientFiles = [
   'app_client/app.js',
   'app_client/home/home.controller.js',
   'app_client/about/about.controller.js',
-  'app_client/common/filters/addHtmlLineBreaks.js',
   'app_client/memberList/memberList.controller.js',
+  'app_client/auth/register/register.controller.js',
+  'app_client/auth/login/login.controller.js',
+  'app_client/common/filters/addHtmlLineBreaks.js',
   'app_client/common/services/s2cData.service.js',
+  'app_client/common/services/authentication.service.js',
   'app_client/common/directives/navigation/navigation.directive.js',
   'app_client/common/directives/footerGeneric/footerGeneric.directive.js',
+  'app_client/common/directives/footerGeneric/footerGeneric.controller.js',
   'app_client/common/directives/pageHeader/pageHeader.directive.js'
 ];
 var uglified = uglifyJs.minify(appClientFiles, { compress : false });
@@ -50,6 +58,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'app_client')));
+
+app.use(passport.initialize());+
 
 // URL이 시작될때 사용한다.
 //app.use('/', routes);
