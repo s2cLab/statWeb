@@ -8,18 +8,17 @@
       </p>
     </div>
     <div class="col-lg-4">
-        <div layout="column" layout-align="center">
-          <div layout="row" layout-align="center center">
-          <button ng-hide ="ftvm.isLoggedIn"><a href="/#login/?page ={{ ftvm.currentPath }}"> Sign in </a></button>
-          <button ng-show ="ftvm.isLoggedIn" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            {{ftvm.currentUser.name}}
+        <div class="dropup" layout-align="center center">
+          <button ng-hide ="vm.isLoggedIn"><a href="/#login?page ={{ vm.currentPath }}"> Sign in </a></button>
+          <button ng-show ="vm.isLoggedIn" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{vm.currentUser.name}}
             <span class="caret"></span>
           </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-              <li><a href="" ng-click="ftvm.logout()"> Logout </a></li>
+              <li><a href="" ng-click="vm.logout()"> Logout </a></li>
             </ul>
         </div>
-      </div>
     </div>
+    
     <div class="col-lg-2"></div>
   </footer>

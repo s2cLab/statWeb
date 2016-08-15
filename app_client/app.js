@@ -1,5 +1,7 @@
-angular.module('s2cLabApp', ['ngRoute', 'ngSanitize']);
+(function () {
 
+angular.module('s2cLabApp', ['ngRoute', 'ngSanitize']);
+ 
   function config ($routeProvider, $locationProvider) {
     
     if(window.location.pathname !== '/' ) {
@@ -10,7 +12,8 @@ angular.module('s2cLabApp', ['ngRoute', 'ngSanitize']);
       .when('/', {
         templateUrl: '/home/home.view.html',
         controller :  'homeCtrl',
-        controllerAs : 'vm'
+        controllerAs : 'vm',
+        title : 'S2C Lab'
       })
       .when('/about', {
         templateUrl: '/about/aboutS2C.view.html',
@@ -40,3 +43,5 @@ angular.module('s2cLabApp', ['ngRoute', 'ngSanitize']);
 angular
   .module('s2cLabApp')
   .config(['$routeProvider', '$locationProvider', config]);
+  
+})();
