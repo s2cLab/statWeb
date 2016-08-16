@@ -3,3 +3,6 @@ node_modules
 
 # Environment variables
 .env
+
+# except
+/public/angular/s2cLab.min
