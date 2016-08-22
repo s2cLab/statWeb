@@ -6,16 +6,18 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><a href="/#about">소개</a></li>
         <li class="active"><a href="/#members">구성원</a></li>
         <li><a href="/#publications">연구실적</a></li>
-        <li><a href="/#pictures">활동사진</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right"></ul>
-      <form class="navbar-form navbar-right">
-        <input type="text" placeholder="Search..." class="form-control">
-      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-hide="navvm.isLoggedIn"><a href="/#login/?page={{ navvm.currentPath }}">Sign in</a></li>
+        <li ng-show="navvm.isLoggedIn" class="dropdown">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown">{{ navvm.currentUser.name }} <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="" ng-click="navvm.logout()">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
-    <!-- /.nav-collapse-->
   </div>
 </div>

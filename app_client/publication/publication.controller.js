@@ -2,13 +2,15 @@
 
   angular
     .module('s2cLabApp')
-    .controller('homeCtrl', homeCtrl);
+    .controller('pulbcationCtrl', pulbcationCtrl);
 
-function homeCtrl () {
+function pulbcationCtrl () {
 
   var vm = this;
+  vm.title = 'About S2C';
   vm.pageHeader = {
-    title : '논문실적',
+    title : '연구실소개',
+    strapline : 'Scientific and Statistical Computing Lab.'
   };
   vm.labNameKor = '통계 컴퓨팅 랩';
   vm.labNameEng = 'Scentific & Statistical Computing Lab';
@@ -22,5 +24,5 @@ function homeCtrl () {
   vm.picture_image = '/images/school/jbnu.jpg';
   
   };
-
+  
 }) ();

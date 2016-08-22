@@ -1,0 +1,34 @@
+<navigation></navigation>
+  <div class="container-fluid">
+    <img src="/images/school/jbnuLogo.jpg" class="jbnuLogo img-responsive"></img>
+    <div class="col-lg-8 col-lg-offset-2">
+      <h3 class="glyphicon glyphicon-home" > {{ vm.pageHeader.title }}</h3>
+      <hr align="left" style="width:20%;height:2px;border:none;color:#428bca;background-color:#428bca;">
+      <hr style="border-top: dotted 1px;" />
+      <h4 class = "spotlight"> &gt; S2C Lab 논문실적 </h4>
+          <p ng-bind-html="vm.description.content | addHtmlLineBreaks"></p>
+      <h5> &#9654; ~ 2016 </h5>
+          <ul>
+            <li> {{ vm.study.study1 }} </li>
+            <li> {{ vm.study.study2 }} </li>
+            <li> {{ vm.study.study3 }} </li>
+            <li> {{ vm.study.study4 }} </li>
+            <li> {{ vm.study.study5 }} </li>
+          </ul>
+      <h5> &#9654; ~ 2010 </h5>
+          <ul>
+            <li> {{ vm.study.study1 }} </li>
+            <li> {{ vm.study.study2 }} </li>
+            <li> {{ vm.study.study3 }} </li>
+            <li> {{ vm.study.study4 }} </li>
+            <li> {{ vm.study.study5 }} </li>
+          </ul>
+      <h4 class = "spotlight"> &gt; 최근 주요 논문 및 특허 </h4>
+          <ul>
+            <li> {{ vm.study.study1 }} </li>
+            <li> {{ vm.study.study2 }} </li>
+          </ul>
+      <hr style="border-top: dotted 1px;" />
+    </div>
+  </div>
+<footer-generic></footer-generic>

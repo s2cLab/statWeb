@@ -2,7 +2,7 @@
 
   angular
     .module('s2cLabApp')
-    .service('addHtmlLineBreaks', addHtmlLineBreaks);
+    .filter('addHtmlLineBreaks', addHtmlLineBreaks);
 
   function addHtmlLineBreaks () {
     return function(text) {

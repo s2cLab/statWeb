@@ -13,16 +13,15 @@ angular.module('s2cLabApp', ['ngRoute', 'ngSanitize']);
         templateUrl: '/home/home.view.html',
         controller :  'homeCtrl',
         controllerAs : 'vm',
-        title : 'S2C Lab'
-      })
-      .when('/about', {
-        templateUrl: '/about/aboutS2C.view.html',
-        controller :  'aboutCtrl',
-        controllerAs : 'vm'
       })
       .when('/members', {
         templateUrl: '/memberList/memberList.view.html',
         controller :  'memberListCtrl',
+        controllerAs : 'vm'
+      })
+      .when('/publications', {
+        templateUrl : 'publication/publication.view.html',
+        controller : 'pulbcationCtrl',
         controllerAs : 'vm'
       })
       .when('/register', {

@@ -28,16 +28,16 @@ app.set('view engine', 'jade');
 var appClientFiles = [
   'app_client/app.js',
   'app_client/home/home.controller.js',
-  'app_client/about/about.controller.js',
   'app_client/memberList/memberList.controller.js',
+  'app_client/publication/publication.controller.js',
   'app_client/auth/register/register.controller.js',
   'app_client/auth/login/login.controller.js',
   'app_client/common/filters/addHtmlLineBreaks.js',
   'app_client/common/services/s2cData.service.js',
   'app_client/common/services/authentication.service.js',
   'app_client/common/directives/navigation/navigation.directive.js',
+  'app_client/common/directives/navigation/navigation.controller.js',
   'app_client/common/directives/footerGeneric/footerGeneric.directive.js',
-  'app_client/common/directives/footerGeneric/footerGeneric.controller.js',
   'app_client/common/directives/pageHeader/pageHeader.directive.js'
 ];
 var uglified = uglifyJs.minify(appClientFiles, { compress : false });
